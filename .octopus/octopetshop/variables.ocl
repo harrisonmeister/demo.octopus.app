@@ -154,7 +154,7 @@ variable "A.Test" {
         environment = ["production"]
     }
 
-    value "Mark" {
+    value "H" {
         environment = ["development"]
     }
 }
