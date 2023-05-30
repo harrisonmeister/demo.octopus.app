@@ -148,13 +148,3 @@ variable "Octopus.Azure.Account" {
         action = ["create-web-app-service-azure-discovery"]
     }
 }
-
-variable "A.Test" {
-    value "Mark" {
-        environment = ["production"]
-    }
-
-    value "H" {
-        environment = ["development"]
-    }
-}
