@@ -183,7 +183,7 @@ step "send-completion-notification" {
 }
 
 step "run-a-script" {
-    name = "Run a Script"
+    name = "Run a Script edited in GitHub"
 
     action {
         action_type = "Octopus.Script"
