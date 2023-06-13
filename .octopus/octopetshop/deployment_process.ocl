@@ -181,17 +181,3 @@ step "send-completion-notification" {
         }
     }
 }
-
-step "run-a-script" {
-    name = "Run a Script edited in GitHub again"
-
-    action {
-        action_type = "Octopus.Script"
-        properties = {
-            Octopus.Action.Script.ScriptBody = "Write-Host \"testing!\""
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-        }
-        worker_pool = "hosted-windows"
-    }
-}
