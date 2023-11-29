@@ -45,5 +45,5 @@ variable "SnowGlobe.WorkerPool" {
 variable "Octopus.Azure.Account" {
     type = "AzureAccount"
 
-    value "octopetshop-azure-subscription" {}
+    value "snowglobe-azure-subscription" {}
 }
