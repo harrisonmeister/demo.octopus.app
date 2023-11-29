@@ -47,3 +47,17 @@ variable "Octopus.Azure.Account" {
 
     value "snowglobe-azure-subscription" {}
 }
+
+variable "SnowGlobe.AzureAppConfig.Account" {
+    type = "AzureAccount"
+
+    value "snowglobe-azure-oidc" {}
+}
+
+variable "SnowGlobe.AzureAppConfig.StoreName" {
+    value "snowglobe-configstore" {}
+}
+
+variable "SnowGlobe.AzureAppConfig.Endpoint" {
+    value "https://#{SnowGlobe.AzureAppConfig.StoreName}.azconfig.io" {}
+}
