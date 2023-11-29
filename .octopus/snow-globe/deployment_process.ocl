@@ -1,3 +1,30 @@
+step "azure-appconfig-kv-retrieve-values" {
+    name = "Azure AppConfig KV - Retrieve Values"
+
+    action {
+        properties = {
+            Azure.AppConfig.KV.RetrieveValues.AzureAccount = "SnowGlobe.AzureAppConfig.Account"
+            Azure.AppConfig.KV.RetrieveValues.ConfigStoreEndpoint = "#{SnowGlobe.AzureAppConfig.Endpoint}"
+            Azure.AppConfig.KV.RetrieveValues.ConfigStoreName = "#{SnowGlobe.AzureAppConfig.StoreName}"
+            Azure.AppConfig.KV.RetrieveValues.CreateAppSettingsJson = "False"
+            Azure.AppConfig.KV.RetrieveValues.Labels = "#{Octopus.Environment.Name | ToLower}"
+            Azure.AppConfig.KV.RetrieveValues.PrintVariableNames = "False"
+            Azure.AppConfig.KV.RetrieveValues.RetrievalMethod = "all"
+            Azure.AppConfig.KV.RetrieveValues.SaveAsSensitiveVariables = "False"
+            Azure.AppConfig.KV.RetrieveValues.SuppressWarnings = "False"
+            Azure.AppConfig.KV.RetrieveValues.TreatWarningsAsErrors = "True"
+            Octopus.Action.Template.Id = "ActionTemplates-2842"
+            Octopus.Action.Template.Version = "1"
+        }
+        worker_pool = "hosted-ubuntu"
+
+        container {
+            feed = "docker-hub"
+            image = "octopusdeploy/worker-tools:6.0.1-ubuntu.22.04"
+        }
+    }
+}
+
 step "create-web-app-service" {
     name = "Create Snow Globe service"
     properties = {
