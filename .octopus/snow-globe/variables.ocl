@@ -1,11 +1,3 @@
-variable "Octopus.Azure.Account" {
-    type = "AzureAccount"
-
-    value "octopetshop-azure-subscription" {
-        action = ["create-web-app-service"]
-    }
-}
-
 variable "Octopus.ServiceNow.ChangeRequest.Number" {
     value "" {
         environment = ["production"]
@@ -48,4 +40,10 @@ variable "SnowGlobe.WorkerPool" {
     type = "WorkerPool"
 
     value "azure-worker-pool" {}
+}
+
+variable "Octopus.Azure.Account" {
+    type = "AzureAccount"
+
+    value "octopetshop-azure-subscription" {}
 }
