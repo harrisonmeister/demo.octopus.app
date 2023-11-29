@@ -2,6 +2,7 @@ step "azure-appconfig-kv-retrieve-values" {
     name = "Azure AppConfig KV - Retrieve Env Values"
 
     action "azure-appconfig-kv-retrieve-env-values" {
+        notes = "Retrieves environment-specific values from Azure App Config by key, and label"
         properties = {
             Azure.AppConfig.KV.RetrieveValues.AzureAccount = "SnowGlobe.AzureAppConfig.Account"
             Azure.AppConfig.KV.RetrieveValues.ConfigStoreEndpoint = "#{SnowGlobe.AzureAppConfig.Endpoint}"
@@ -31,6 +32,7 @@ step "azure-appconfig-kv-retrieve-values-1" {
     start_trigger = "StartWithPrevious"
 
     action "azure-appconfig-kv-retrieve-values" {
+        notes = "Retrieves specified values from Azure App Config by key"
         properties = {
             Azure.AppConfig.KV.RetrieveValues.AzureAccount = "SnowGlobe.AzureAppConfig.Account"
             Azure.AppConfig.KV.RetrieveValues.ConfigStoreEndpoint = "#{SnowGlobe.AzureAppConfig.Endpoint}"
