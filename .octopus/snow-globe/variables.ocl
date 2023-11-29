@@ -12,30 +12,6 @@ variable "Octopus.ServiceNow.ChangeRequest.Number" {
     }
 }
 
-variable "SnowGlobe.CleanedEnvironmentName" {
-    value "#{Octopus.Environment.Name | Replace \"[^a-zA-Z]+\" \"-\" | ToLower}" {}
-}
-
-variable "SnowGlobe.CleanedSpaceName" {
-    value "#{Octopus.Space.Name | Replace \"[^a-zA-Z]+\" \"-\" | ToLower}" {}
-}
-
-variable "SnowGlobe.Cluster.Namespace" {
-    value "#{SnowGlobe.CleanedSpaceName}-#{SnowGlobe.CleanedEnvironmentName}" {}
-}
-
-variable "SnowGlobe.WebApp.HttpPort" {
-    value "5000" {}
-}
-
-variable "SnowGlobe.WebApp.HttpsPort" {
-    value "5001" {}
-}
-
-variable "SnowGlobe.WebApp.ServiceName" {
-    value "snowglobe-web-app" {}
-}
-
 variable "SnowGlobe.WorkerPool" {
     type = "WorkerPool"
 
@@ -62,4 +38,20 @@ variable "Octopus.Azure.Account" {
     value "snowglobe-azure-subscription" {
         action = ["create-web-app-service"]
     }
+}
+
+variable "SnowGlobe.Cluster.Namespace" {
+    value "#{Octopus.Action[Azure AppConfig KV - Retrieve Env Values].Output.ClusterNamespace}" {}
+}
+
+variable "SnowGlobe.WebApp.HttpPort" {
+    value "#{Octopus.Action[Azure AppConfig KV - Retrieve Values].Output.WebAppHttpPort}" {}
+}
+
+variable "SnowGlobe.WebApp.HttpsPort" {
+    value "#{Octopus.Action[Azure AppConfig KV - Retrieve Values].Output.WebAppHttpsPort}" {}
+}
+
+variable "SnowGlobe.WebApp.ServiceName" {
+    value "#{Octopus.Action[Azure AppConfig KV - Retrieve Values].Output.WebAppName}" {}
 }
