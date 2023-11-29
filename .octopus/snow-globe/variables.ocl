@@ -42,12 +42,6 @@ variable "SnowGlobe.WorkerPool" {
     value "azure-worker-pool" {}
 }
 
-variable "Octopus.Azure.Account" {
-    type = "AzureAccount"
-
-    value "snowglobe-azure-subscription" {}
-}
-
 variable "SnowGlobe.AzureAppConfig.Account" {
     type = "AzureAccount"
 
@@ -60,4 +54,12 @@ variable "SnowGlobe.AzureAppConfig.StoreName" {
 
 variable "SnowGlobe.AzureAppConfig.Endpoint" {
     value "https://#{SnowGlobe.AzureAppConfig.StoreName}.azconfig.io" {}
+}
+
+variable "Octopus.Azure.Account" {
+    type = "AzureAccount"
+
+    value "snowglobe-azure-subscription" {
+        action = ["create-web-app-service"]
+    }
 }
