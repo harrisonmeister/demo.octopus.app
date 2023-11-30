@@ -10,7 +10,7 @@ step "azure-appconfig-kv-retrieve-values" {
             Azure.AppConfig.KV.RetrieveValues.CreateAppSettingsJson = "False"
             Azure.AppConfig.KV.RetrieveValues.KeyNames = "ClusterNamespace"
             Azure.AppConfig.KV.RetrieveValues.Labels = "#{Octopus.Environment.Name | ToLower}"
-            Azure.AppConfig.KV.RetrieveValues.PrintVariableNames = "False"
+            Azure.AppConfig.KV.RetrieveValues.PrintVariableNames = "True"
             Azure.AppConfig.KV.RetrieveValues.RetrievalMethod = "all"
             Azure.AppConfig.KV.RetrieveValues.SaveAsSensitiveVariables = "False"
             Azure.AppConfig.KV.RetrieveValues.SuppressWarnings = "False"
