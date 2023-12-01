@@ -60,10 +60,10 @@ variable "OctoFXDatabase" {
     value "Server=#{OctoFX.Database.Server};Initial Catalog=#{OctoFX.Database.Name};Persist Security Info=False;User ID=#{OctoFX.Database.User};Password=#{OctoFX.Database.UserPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" {}
 }
 
-variable "OctopusPrintEvaluatedVariables" {
+variable "OctopusPrintVariables" {
     value "False" {}
 }
 
-variable "OctopusPrintVariables" {
-    value "False" {}
+variable "OctopusPrintEvaluatedVariables" {
+    value "True" {}
 }
