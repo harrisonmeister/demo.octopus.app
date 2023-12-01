@@ -24,10 +24,6 @@ variable "SnowGlobe.AzureAppConfig.Account" {
     value "snowglobe-azure-oidc" {}
 }
 
-variable "SnowGlobe.AzureAppConfig.StoreName" {
-    value "snowglobe-configstore" {}
-}
-
 variable "SnowGlobe.AzureAppConfig.Endpoint" {
     value "https://#{SnowGlobe.AzureAppConfig.StoreName}.azconfig.io" {}
 }
@@ -54,4 +50,8 @@ variable "SnowGlobe.WebApp.HttpsPort" {
 
 variable "SnowGlobe.WebApp.ServiceName" {
     value "#{Octopus.Action[Azure AppConfig KV - Retrieve Values].Output.WebAppName}" {}
+}
+
+variable "SnowGlobe.AzureAppConfig.StoreName" {
+    value "octo-config-store" {}
 }
