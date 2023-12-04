@@ -49,7 +49,7 @@ step "azure-appconfig-kv-retrieve-values-1" {
             Azure.AppConfig.KV.RetrieveValues.SuppressWarnings = "False"
             Azure.AppConfig.KV.RetrieveValues.TreatWarningsAsErrors = "True"
             Octopus.Action.Template.Id = "ActionTemplates-2842"
-            Octopus.Action.Template.Version = "1"
+            Octopus.Action.Template.Version = "2"
         }
         worker_pool = "hosted-ubuntu"
 
